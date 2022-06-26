@@ -24,7 +24,7 @@ class UserController extends Controller
     ]);
 
     // Hash Password
-    $formField['password'] = bcrypt($formFields['password']);
+    $formFields['password'] = bcrypt($formFields['password']);
     $user = User::create($formFields);
 
     // Login
@@ -45,7 +45,7 @@ class UserController extends Controller
   }
 
   // show login form
-  public function login(Request $request)
+  public function login()
   {
     return view('users.login');
   }
